@@ -1,10 +1,12 @@
+using Server.GameSystem;
+
 namespace Server
 {
-    public class ClearanceSpell : IAction
+    public class ClearanceSpell : Spell, IAction
     {
         private readonly Burning _burning;
 
-        public ClearanceSpell(Burning burning)
+        public ClearanceSpell(Burning burning,ITurnInformer turnInformer, int rechargeTime) : base(turnInformer, rechargeTime)
         {
             _burning = burning;
         }
