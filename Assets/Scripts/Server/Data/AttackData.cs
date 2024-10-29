@@ -2,6 +2,6 @@ namespace Server.Data
 {
     public class AttackData
     {
-        public readonly int AttackDamageValue = 8;
+        public readonly int DamageValue = 8;
     }
 }
