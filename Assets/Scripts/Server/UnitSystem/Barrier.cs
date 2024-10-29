@@ -2,8 +2,8 @@ namespace Server
 {
     public class Barrier : IDamageable, IEffect
     {
-        private IDamageable _damageable;
-        private int _maxValue;
+        private readonly IDamageable _damageable;
+        private readonly int _maxValue;
 
         public Barrier(IDamageable damageable, int maxValue)
         {

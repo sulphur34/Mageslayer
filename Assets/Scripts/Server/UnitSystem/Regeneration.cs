@@ -1,12 +1,13 @@
 namespace Server
 {
-    public class RegenerationEffect : IContinuousEffect
+    public class Regeneration : IContinuousEffect
     {
         private readonly IDamageable _health;
         private readonly int _healValue;
+
         private bool _isHealing;
 
-        public RegenerationEffect(IDamageable health, int healValue)
+        public Regeneration(IDamageable health, int healValue)
         {
             _health = health;
             _healValue = healValue;

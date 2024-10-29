@@ -4,18 +4,15 @@ namespace Server
 {
     public class FireballSpell : Spell, IAction
     {
-        private readonly Burning _burning;
-        private readonly IDamageable _damageable;
+        private readonly IEffect _burning;
 
         public FireballSpell(
-            Burning burning,
-            IDamageable damageable,
+            IEffect burning,
             ITurnInformer turnInformer,
             int rechargeTime,
             int activeTime) : base(turnInformer, rechargeTime, activeTime)
         {
             _burning = burning;
-            _damageable = damageable;
         }
 
         public void Initiate()

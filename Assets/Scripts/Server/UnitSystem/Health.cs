@@ -6,7 +6,7 @@ namespace Server
     public class Health : IDamageable
     {
         private readonly int _minHealth = 0;
-        private int _maxValue;
+        private readonly int _maxValue;
 
         public Health(int maxValue)
         {

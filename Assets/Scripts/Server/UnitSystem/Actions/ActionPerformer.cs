@@ -1,21 +1,22 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Server.Utils;
 
 namespace Server
 {
-    public class ActionPerformer
+    public class ActionPerformer : IActionPerformer
     {
-        private readonly List<IAction> _actions;
+        private readonly Dictionary<ActionTypes,IAction> _actions = new ();
 
-        public ActionPerformer(List<IAction> actions)
+        public void AddAction(ActionTypes actionType, IAction action)
         {
-            _actions = actions;
+            _actions.Add(actionType, action);
         }
 
-        public void Perform()
+        public void Perform(ActionTypes actionType)
         {
-            _actions.ElementAt(Randomizer.GetRandomNumber(_actions.Count)).Initiate();
+            _actions[actionType].Initiate();
         }
     }
 }

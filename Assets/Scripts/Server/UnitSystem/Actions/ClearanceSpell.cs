@@ -4,9 +4,12 @@ namespace Server
 {
     public class ClearanceSpell : Spell, IAction
     {
-        private readonly Burning _burning;
+        private readonly IEffect _burning;
 
-        public ClearanceSpell(Burning burning,ITurnInformer turnInformer, int rechargeTime) : base(turnInformer, rechargeTime)
+        public ClearanceSpell(
+            IEffect burning,
+            ITurnInformer turnInformer,
+            int rechargeTime) : base(turnInformer, rechargeTime)
         {
             _burning = burning;
         }

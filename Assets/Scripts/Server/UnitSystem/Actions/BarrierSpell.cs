@@ -4,10 +4,10 @@ namespace Server
 {
     public class BarrierSpell : Spell, IAction
     {
-        private Barrier _barrier;
+        private IEffect _barrier;
 
         public BarrierSpell(
-            Barrier barrier,
+            IEffect barrier,
             ITurnInformer turnInformer,
             int rechargeTime,
             int activeTime) : base(turnInformer, rechargeTime, activeTime)
